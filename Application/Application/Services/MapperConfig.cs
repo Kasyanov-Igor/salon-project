@@ -12,6 +12,9 @@ namespace Application.Services
         public MapperConfig()
         {
             this.loggerFactory = new LoggerFactory();
+            CreateMap<DTORecord, Record>();
+            CreateMap<DTOEmployee, Employee>()
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => "Employee"));
             CreateMap<DTOClient, Client>()
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => "Client"));
         }
