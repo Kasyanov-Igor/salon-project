@@ -43,7 +43,7 @@ namespace Application.Services
 
 			// Создание claims (бизнес-логика)
 			var claims = new List<Claim>
-			 {
+			{
 				 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
 				 new Claim(ClaimTypes.Name, user.Login),
 				 new Claim(ClaimTypes.Role, user.Status.ToString())
@@ -54,7 +54,6 @@ namespace Application.Services
 
 			return token; // Возврат токена для контроллера
 		}
-
 
 		public async Task<Client> CreateClientAsync(DTOClient userDto)
 		{
